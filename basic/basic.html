@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <div id="app">
+        <input type="text" v-model="msg">
+        <p>
+            <div>{{msg}}</div>
+        </p>
+   </div> 
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    var data = {msg: 'Hello World'};
+
+    var vm = new Vue({
+        el:'#app',
+        data:data
+    });
+    console.log('vm.$data === data ==>',vm.$data === data);
+    console.log('vm.$el === document.getElementById(\'app\') ==>',vm.$el === document.getElementById('app'));
+    // 监控 msg 这个变量的变化
+    vm.$watch('msg',function(newValue, oldValue){
+        console.log('new value: ', newValue)
+        console.log('old value: ', oldValue)
+    });
+</script>
+</html>
