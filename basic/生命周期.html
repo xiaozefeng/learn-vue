@@ -33,7 +33,10 @@
         updated(){
             console.log('updated')
         },
-        destoryed(){
+        beforeDestroy(){
+            console.log('before destory');
+        },
+        destroyed(){
             console.log('destoryed')
         }
     }).$mount('#app');
